@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     # =============installed application by myself ===============
+    'account.apps.AccountConfig',
     'courses.apps.CoursesConfig',
     # =============Builtin application ===============
     'django.contrib.admin',
