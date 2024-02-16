@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     # =============installed application by myself ===============
+    'account.apps.AccountConfig',
     'courses.apps.CoursesConfig',
     # =============Builtin application ===============
     'django.contrib.admin',
@@ -130,3 +131,10 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 MEDIA_URL = 'media/' # www.hamruyesh.com/media/flower.jpg
 MEDIA_ROOT = BASE_DIR / 'media'
+
+LOGIN_REDIRECT_URL = 'dashboard'
+LOGIN_URL = 'login'
+LOGOUT_URL = 'logout'
+
+# ======================= Sending Email settings ===========================
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'

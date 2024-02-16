@@ -24,6 +24,7 @@ urlpatterns = [
     # path('accounts/login/', auth_views.LoginView.as_view(), name='login'),
     # path('accounts/logout/', auth_views.LogoutView.as_view(), name='logout'),
     path('course/', include('courses.urls')), # http://127.0.0.1:8000/course/mine/
+    path('account/', include('account.urls')), # http://127.0.0.1:8000/account/login/
     
 ]
 
