@@ -1,18 +1,18 @@
 {% extends 'base.html' %}
-{% load course%}
+
+{% load course %}
 {% block title %}
     Module {{ module.order|add:1 }}: {{ module.title }}
 {% endblock %}
 
 {% block content %}
     {% with course=module.course %}
-        <h1>Course "{{ course.title}}"</h1>
+        <h1>Course "{{ course.title }}"</h1>
         <div class="contents">
             <h3>Modules</h3>
             <ul id="modules">
-                {% for m in course.module.all %}
-                <li data-it="{{ m.id }}"{% if m == module %}
-                class="selected"{% endif %}>
+                {% for m in course.modules.all %}
+                <li data-it="{{ m.id }}" {% if m == module %} class="selected" {% endif %}>
                 <a href="{% url 'module_content_list' m.id %}">
                     <span>
                         Module <span class="order">{{ m.order|add:1 }}</span>
@@ -20,8 +20,10 @@
                     <br>
                 </a>
             </li>
+
             {% empty %}
             <li>No Module yet!!!</li>
+
             {% endfor %}
             </ul>
             <p><a href="{% url 'course_module_update' course.id %}">Edit modules</a></p>
@@ -45,6 +47,7 @@
                 </div>
                 {% empty %}
                 <p>This module has no contents yet!!!</p>
+
             {% endfor %}
             </div>
             <h3>Add new content:</h3>

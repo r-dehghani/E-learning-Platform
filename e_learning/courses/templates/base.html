@@ -8,30 +8,37 @@
     <title>{% block title %}E-learning {% endblock %}</title>
     <link href="{% static 'css/base.css' %}" rel="stylesheet">
 </head>
+
 <body>
     <div id="header">
         <a href="/" class="logo">E-learning</a>
         <ul class="menu">
             {% if request.user.is_authenticated %}
-                <li><a href="{% url 'logout' %}">Sign out</a></li>
+                <li>
+                    <p> hello</p>
+                    <a href="{% url 'logout' %}">Sign out</a>
+                </li>
             {% else %}
-                <li><a href="{% url 'login' %}">Sign in</a></li>
+                <li>
+                    <a href="{% url 'login' %}">Sign in</a>
+                </li>
             {% endif %}
         </ul> 
     </div>
+
     <div id="content">
         {% block content %}
             
         {% endblock %}
     </div>
-    <script>
+    <!-- <script>
         document.addEventListener('DOMContentLoaded', (event) => {
             //DOM LOADED
             {% block domready %}
 
             {% endblock %}
         })
-    </script>
+    </script> -->
     
 </body>
 </html>

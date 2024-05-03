@@ -82,6 +82,12 @@ ol {
 
 #content {
     padding:30px 100px;
+    width:20%;
+    padding:10px;
+    float:left;
+    background:#333;
+    color: #fff;
+    font-family:'Roboto', sans-serif;
 }
 
 /* forms */
