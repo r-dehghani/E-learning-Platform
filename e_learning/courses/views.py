@@ -176,4 +176,4 @@ class CourseListView(TemplateResponseMixin, View):
 
 class CourseDetailView(DetailView):
     model = Course
-    template_name = 'course/course/detail.html'
+    template_name = 'courses/course/detail.html'
