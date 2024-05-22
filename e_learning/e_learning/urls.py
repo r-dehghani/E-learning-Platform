@@ -27,9 +27,11 @@ urlpatterns = [
     # path('accounts/logout/', auth_views.LogoutView.as_view(), name='logout'),
     path('course/', include('courses.urls')), # http://127.0.0.1:8000/course/mine/
     path('account/', include('account.urls')), # http://127.0.0.1:8000/account/login/
+    path('students/', include('students.urls')),
+
     
 ]
 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL,
-                          document_ROOT=settings.MEDIA_ROOT)
+                          document_root=settings.MEDIA_ROOT)
