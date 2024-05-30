@@ -17,17 +17,21 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
+from courses.views import CourseListView
 # from django.contrib.auth import views as auth_views
-
+#http://127.0.0.1:8000/
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', CourseListView.as_view(), name='course_list'), #http://127.0.0.1:8000/
     # path('accounts/login/', auth_views.LoginView.as_view(), name='login'),
     # path('accounts/logout/', auth_views.LogoutView.as_view(), name='logout'),
     path('course/', include('courses.urls')), # http://127.0.0.1:8000/course/mine/
     path('account/', include('account.urls')), # http://127.0.0.1:8000/account/login/
+    path('students/', include('students.urls')),
+
     
 ]
 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL,
-                          document_ROOT=settings.MEDIA_ROOT)
+                          document_root=settings.MEDIA_ROOT)
