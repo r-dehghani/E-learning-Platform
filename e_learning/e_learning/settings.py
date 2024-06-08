@@ -25,8 +25,7 @@ SECRET_KEY = 'django-insecure-4m^u*#li+(qsv%pm+byta!)fmqqc%-$14n9)u@40f(e@mv%7^a
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [".vercel.app"]
-
+ALLOWED_HOSTS = [".vercel.app", '127.0.0.1', 'localhost']
 
 # Application definition
 
@@ -81,13 +80,23 @@ WSGI_APPLICATION = 'e_learning.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'railway',
+        'USER': 'postgres',
+        'PASSWORD': 'NEWRpkVPSPciMoQlMNtxTgPORXrYfyrp',
+        'HOST': 'monorail.proxy.rlwy.net',
+        'PORT': '48218',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
@@ -128,7 +137,7 @@ STATIC_URL = 'static/'
 STATICFILES_DIRS = [
     BASE_DIR / 'courses/static/'
 ]
-STATIC_ROOT = os.path.join(BASE_DIR, "static/")
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', "static")
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
